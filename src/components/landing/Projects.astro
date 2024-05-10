@@ -1,0 +1,91 @@
+---
+// Define the array of projects directly in the frontmatter script.
+const otherprojects = [
+  {
+    url: "https://bit-blitz-blog.vercel.app/",
+    title: "BitBlitz Blog",
+    description:
+      "A digital space where I share my thoughts, feelings, and passions with the world. Here, you'll find insights into the things I love, alongside candid reflections on the ever-evolving landscape of development environments and technologies that fascinate me.",
+  },
+  {
+    url: "https://plansio-porfolio-website.vercel.app/",
+    title: "Plansio Portfolio Website",
+    description:
+      "A website created as a university project by me and my friends, showcasing the work we completed for a specific class.",
+  },
+  {
+    url: "https://ecommerce-prototype-9fncv7f4f-megusta23.vercel.app/",
+    title: "Ecommerce prototype",
+    description:
+      "This project was developed to enhance my skills in the realm of web development and to explore the intricacies of the ecommerce industry.",
+  },
+  {
+    url: "https://blog-site-57huxzzpv-megusta23.vercel.app/",
+    title: "Full-stack blog prototype",
+    description:
+      "This marks one of my initial attempts at building a full-stack application. I know that it isn't the best but we gotta start somewhere",
+  },
+  // Add more projects as needed...
+];
+
+// Function to calculate `data-aos-duration` based on index
+function calculateAosDuration(index) {
+  return 1500 + index * 500; // Example: Increment duration by 500ms for each project
+}
+---
+
+<section class="bg-primary">
+  <div class="px-8 2xl:max-w-7xl mx-auto py-32">
+    <div class="space-y-2">
+      <!-- Section Title and Decorative Elements -->
+      <div
+        class="h-0.5 bg-amber-400"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
+      </div>
+      <h3
+        class="text-amber-400 text-base font-medium"
+        data-aos="fade-up"
+        data-aos-duration="1500"
+      >
+        <span>Main</span>
+        <span class="font-bold">projects</span>
+      </h3>
+    </div>
+
+    <ul
+      class="mx-auto grid grid-cols-1 sm:grid-cols-2 text-amber-400 md:grid-cols-3 lg:grid-cols-4 items-start gap-6 mt-32"
+      role="list"
+    >
+      {
+        otherprojects.map((project, index) => (
+          <li
+            class="flow-root h-full"
+            data-aos="fade-up"
+            data-aos-duration={calculateAosDuration(index)}
+          >
+            <a href={project.url}>
+              <div class="h-full flex flex-col justify-between">
+                <div>
+                  <p class="hover:text-blue-500/70 text-blue-500 text-9xl font-black lg:rotate-90 xl:-translate-x-28 lg:-translate-x-16 lg:mb-8 xl:mb-0">
+                    0{index + 1}.
+                  </p>
+                  <p class="italic shrink-0">{project.title}</p>
+                  <p class="text-base mt-3 leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
+                <div>
+                  <p class="mt-3 text-base font-semibold text-blue-500">
+                    Learn more &nbsp; ↗
+                  </p>
+                </div>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
