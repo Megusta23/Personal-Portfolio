@@ -25,7 +25,12 @@ const otherprojects = [
     description:
       "This marks one of my initial attempts at building a full-stack application. I know that it isn't the best but we gotta start somewhere",
   },
-  // Add more projects as needed...
+  {
+    url: "https://tv-shows-movies-assignment.vercel.app/",
+    title: "Top 10 Movies/TV Shows",
+    description:
+      "I've been given a challenge to create, and I'm pleased to present my solution!",
+  },
 ];
 
 // Function to calculate `data-aos-duration` based on index
@@ -68,7 +73,7 @@ function calculateAosDuration(index) {
             <a href={project.url}>
               <div class="h-full flex flex-col justify-between">
                 <div>
-                  <p class="hover:text-blue-500/70 text-blue-500 text-9xl font-black lg:rotate-90 xl:-translate-x-28 lg:-translate-x-16 lg:mb-8 xl:mb-0">
+                  <p class="hover:text-blue-500/70 text-blue-500 text-9xl font-black mb-1">
                     0{index + 1}.
                   </p>
                   <p class="italic shrink-0">{project.title}</p>
